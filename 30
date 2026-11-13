@@ -1,0 +1,1112 @@
+PYTHON MODEL EXAM – 30 OLLAMA PROGRAMS
+Lab record format: Aim • Procedure • Program • Sample Output • Result • Execution Guide
+Based on the uploaded MODEL EXAM QUESTIONS.docx. The programs use the Ollama Python package and the llama3.2 model.
+COMMON SETUP (DO THIS ONCE)
+    1. Install Python 3 from https://www.python.org/downloads/. During installation on Windows, enable “Add Python to PATH”.
+    2. Install Ollama from https://ollama.com/download/ and complete the installation.
+    3. Open Command Prompt and run: ollama pull llama3.2
+    4. Install the Python package: pip install ollama
+    5. Create a folder for the practical programs. Open that folder in VS Code.
+    6. For each question, create the filename shown, paste its program, save, and run: python filename.py
+    7. Keep the Ollama application/service running. The first response may take a little time.
+Common note: These examples use model="llama3.2". If you downloaded a different model, replace that model name in the code. Internet is not required for model responses after the model has been downloaded.
+
+QUESTION 1: Grammar Correction Assistant
+Aim
+To develop a Python application using Ollama that grammar correction assistant based on user input.
+Procedure / Algorithm
+    8. Import the Ollama Python library.
+    9. Accept the required input from the user (or read the required text file / FAQ dataset).
+    10. Prepare a prompt that tells the AI model what task to perform.
+    11. Send the prompt to the llama3.2 model using ollama.chat().
+    12. Read and display the response returned by the model.
+    13. Save the generated response in corrected_text.txt.
+Program
+import ollama
+ 
+print("Grammar Correction Assistant")
+user_text = input("Enter sentence or paragraph: ")
+ 
+prompt = "Correct grammar and spelling while preserving meaning:\n" + user_text
+ 
+response = ollama.chat(
+    model="llama3.2",
+    messages=[{"role": "user", "content": prompt}]
+)
+result = response["message"]["content"]
+ 
+print("\nRESULT:\n")
+print(result)
+ 
+with open("corrected_text.txt", "w", encoding="utf-8") as file:
+    file.write(result)
+print("\nSaved successfully in corrected_text.txt")
+Sample Output
+Input: She go to school yesterday.
+Output: She went to school yesterday.
+Result
+Thus, the grammar correction assistant was developed and executed successfully using Python and Ollama. The program displayed the generated result and saved it in corrected_text.txt.
+How to Execute
+Save the code using the filename question1.py. Open Command Prompt in that folder and run: python question1.py. Enter the requested details when prompted.
+
+QUESTION 2: Sentiment Analysis Application
+Aim
+To develop a Python application using Ollama that sentiment analysis application based on user input.
+Procedure / Algorithm
+    14. Import the Ollama Python library.
+    15. Accept the required input from the user (or read the required text file / FAQ dataset).
+    16. Prepare a prompt that tells the AI model what task to perform.
+    17. Send the prompt to the llama3.2 model using ollama.chat().
+    18. Read and display the response returned by the model.
+Program
+import ollama
+ 
+print("Sentiment Analysis Application")
+user_text = input("Enter customer review: ")
+ 
+prompt = "Analyze the text. Classify it as Positive, Negative, or Neutral and explain briefly.\n" + user_text
+ 
+response = ollama.chat(
+    model="llama3.2",
+    messages=[{"role": "user", "content": prompt}]
+)
+result = response["message"]["content"]
+ 
+print("\nRESULT:\n")
+print(result)
+Sample Output
+Input: The product is excellent and works perfectly.
+Output: Positive – The customer expresses satisfaction.
+Result
+Thus, the sentiment analysis application was developed and executed successfully using Python and Ollama. The program displayed the generated result.
+How to Execute
+Save the code using the filename question2.py. Open Command Prompt in that folder and run: python question2.py. Enter the requested details when prompted.
+
+QUESTION 3: AI-Based MCQ Generator
+Aim
+To develop a Python application using Ollama that ai-based mcq generator based on user input.
+Procedure / Algorithm
+    19. Import the Ollama Python library.
+    20. Accept the required input from the user (or read the required text file / FAQ dataset).
+    21. Prepare a prompt that tells the AI model what task to perform.
+    22. Send the prompt to the llama3.2 model using ollama.chat().
+    23. Read and display the response returned by the model.
+Program
+import ollama
+ 
+print("AI-Based MCQ Generator")
+user_text = input("Enter subject/topic: ")
+ 
+prompt = f"Generate exactly five multiple-choice questions about {user_text}. Give four options A-D and mark the correct answer."
+ 
+response = ollama.chat(
+    model="llama3.2",
+    messages=[{"role": "user", "content": prompt}]
+)
+result = response["message"]["content"]
+ 
+print("\nRESULT:\n")
+print(result)
+Sample Output
+Input: Python basics
+Output: 1. Which keyword defines a function? A) func B) def C) function D) define
+Correct answer: B) def
+(The model generates five questions.)
+Result
+Thus, the ai-based mcq generator was developed and executed successfully using Python and Ollama. The program displayed the generated result.
+How to Execute
+Save the code using the filename question3.py. Open Command Prompt in that folder and run: python question3.py. Enter the requested details when prompted.
+
+QUESTION 4: AI Study Assistant
+Aim
+To develop a Python application using Ollama that ai study assistant based on user input.
+Procedure / Algorithm
+    24. Import the Ollama Python library.
+    25. Accept the required input from the user (or read the required text file / FAQ dataset).
+    26. Prepare a prompt that tells the AI model what task to perform.
+    27. Send the prompt to the llama3.2 model using ollama.chat().
+    28. Read and display the response returned by the model.
+Program
+import ollama
+ 
+print("AI Study Assistant")
+user_text = input("Enter subject topic: ")
+ 
+prompt = "Explain this topic simply and give one suitable example:\n" + user_text
+ 
+response = ollama.chat(
+    model="llama3.2",
+    messages=[{"role": "user", "content": prompt}]
+)
+result = response["message"]["content"]
+ 
+print("\nRESULT:\n")
+print(result)
+Sample Output
+Input: Example subject topic
+Output: The Ollama model generates the requested simple explanation and example based on the input.
+Result
+Thus, the ai study assistant was developed and executed successfully using Python and Ollama. The program displayed the generated result.
+How to Execute
+Save the code using the filename question4.py. Open Command Prompt in that folder and run: python question4.py. Enter the requested details when prompted.
+
+QUESTION 5: AI Flashcard Generator
+Aim
+To develop a Python application using Ollama that ai flashcard generator based on user input.
+Procedure / Algorithm
+    29. Import the Ollama Python library.
+    30. Accept the required input from the user (or read the required text file / FAQ dataset).
+    31. Prepare a prompt that tells the AI model what task to perform.
+    32. Send the prompt to the llama3.2 model using ollama.chat().
+    33. Read and display the response returned by the model.
+    34. Save the generated response in flashcards.txt.
+Program
+import ollama
+ 
+print("AI Flashcard Generator")
+user_text = input("Enter topic: ")
+ 
+prompt = f"Generate exactly five study flashcards about {user_text}. Format each as Question and Answer."
+ 
+response = ollama.chat(
+    model="llama3.2",
+    messages=[{"role": "user", "content": prompt}]
+)
+result = response["message"]["content"]
+ 
+print("\nRESULT:\n")
+print(result)
+ 
+with open("flashcards.txt", "w", encoding="utf-8") as file:
+    file.write(result)
+print("\nSaved successfully in flashcards.txt")
+Sample Output
+Input: Example topic
+Output: The Ollama model generates the requested five question-answer flashcards based on the input.
+Result
+Thus, the ai flashcard generator was developed and executed successfully using Python and Ollama. The program displayed the generated result and saved it in flashcards.txt.
+How to Execute
+Save the code using the filename question5.py. Open Command Prompt in that folder and run: python question5.py. Enter the requested details when prompted.
+
+QUESTION 6: Meeting Minutes Generator
+Aim
+To develop a Python application using Ollama that meeting minutes generator based on user input.
+Procedure / Algorithm
+    35. Import the Ollama Python library.
+    36. Accept the required input from the user (or read the required text file / FAQ dataset).
+    37. Prepare a prompt that tells the AI model what task to perform.
+    38. Send the prompt to the llama3.2 model using ollama.chat().
+    39. Read and display the response returned by the model.
+    40. Save the generated response in meeting_minutes.txt.
+Program
+import ollama
+ 
+print("Meeting Minutes Generator")
+user_text = input("Enter meeting notes: ")
+ 
+prompt = "Prepare meeting minutes with Summary, Decisions, and Action Items from these notes:\n" + user_text
+ 
+response = ollama.chat(
+    model="llama3.2",
+    messages=[{"role": "user", "content": prompt}]
+)
+result = response["message"]["content"]
+ 
+print("\nRESULT:\n")
+print(result)
+ 
+with open("meeting_minutes.txt", "w", encoding="utf-8") as file:
+    file.write(result)
+print("\nSaved successfully in meeting_minutes.txt")
+Sample Output
+Input: Example meeting notes
+Output: The Ollama model generates the requested meeting summary, decisions and action items based on the input.
+Result
+Thus, the meeting minutes generator was developed and executed successfully using Python and Ollama. The program displayed the generated result and saved it in meeting_minutes.txt.
+How to Execute
+Save the code using the filename question6.py. Open Command Prompt in that folder and run: python question6.py. Enter the requested details when prompted.
+
+QUESTION 7: AI Resume Analyzer
+Aim
+To develop a Python application using Ollama that ai resume analyzer based on user input.
+Procedure / Algorithm
+    41. Import the Ollama Python library.
+    42. Accept the required input from the user (or read the required text file / FAQ dataset).
+    43. Prepare a prompt that tells the AI model what task to perform.
+    44. Send the prompt to the llama3.2 model using ollama.chat().
+    45. Read and display the response returned by the model.
+Program
+import ollama
+ 
+print("AI Resume Analyzer")
+with open("resume.txt", "r", encoding="utf-8") as file:
+    user_text = file.read()
+ 
+prompt = """Analyze this resume. Identify skills, qualifications, a brief profile summary, and suggestions for improvement:\n""" + user_text
+ 
+response = ollama.chat(
+    model="llama3.2",
+    messages=[{"role": "user", "content": prompt}]
+)
+result = response["message"]["content"]
+ 
+print("\nRESULT:\n")
+print(result)
+Sample Output
+Input file: resume.txt
+Output: Skills: Python, Java ... Summary: Candidate with programming knowledge ... Improvements: Add project metrics and links.
+Result
+Thus, the ai resume analyzer was developed and executed successfully using Python and Ollama. The program displayed the generated result.
+How to Execute
+Before running, create a text file named resume.txt in the same folder and paste the resume content into it. Then run the program.
+
+QUESTION 8: College FAQ Chatbot
+Aim
+To develop a Python application using Ollama that college faq chatbot based on user input.
+Procedure / Algorithm
+    46. Import the Ollama Python library.
+    47. Accept the required input from the user (or read the required text file / FAQ dataset).
+    48. Prepare a prompt that tells the AI model what task to perform.
+    49. Send the prompt to the llama3.2 model using ollama.chat().
+    50. Read and display the response returned by the model.
+Program
+import ollama
+ 
+print("College FAQ Chatbot")
+faqs = """Admission: Applications are submitted through the college admission office.
+Courses: The college offers undergraduate and postgraduate programmes.
+Library timings: The library is open from 9 AM to 5 PM.
+Examinations: Exam timetables are announced by the examination department."""
+user_text = input("Enter your college-related question: ")
+ 
+prompt = """Answer using ONLY the FAQ information below. If the answer is not present, say: Information not available in the FAQ dataset.
+FAQ DATA:
+""" + faqs + "\nQuestion: " + user_text
+ 
+response = ollama.chat(
+    model="llama3.2",
+    messages=[{"role": "user", "content": prompt}]
+)
+result = response["message"]["content"]
+ 
+print("\nRESULT:\n")
+print(result)
+Sample Output
+Input: What are the library timings?
+Output: The library is open from 9 AM to 5 PM.
+Result
+Thus, the college faq chatbot was developed and executed successfully using Python and Ollama. The program displayed the generated result.
+How to Execute
+Save the code using the filename question8.py. Open Command Prompt in that folder and run: python question8.py. Enter the requested details when prompted.
+The FAQ answers are predefined in the faqs variable. Edit those entries to match your own college information.
+
+QUESTION 9: Customer Feedback Analyzer
+Aim
+To develop a Python application using Ollama that customer feedback analyzer based on user input.
+Procedure / Algorithm
+    51. Import the Ollama Python library.
+    52. Accept the required input from the user (or read the required text file / FAQ dataset).
+    53. Prepare a prompt that tells the AI model what task to perform.
+    54. Send the prompt to the llama3.2 model using ollama.chat().
+    55. Read and display the response returned by the model.
+Program
+import ollama
+ 
+print("Customer Feedback Analyzer")
+user_text = input("Enter customer feedback: ")
+ 
+prompt = "Analyze the text. Classify it as Positive, Negative, or Neutral and explain briefly.\n" + user_text
+ 
+response = ollama.chat(
+    model="llama3.2",
+    messages=[{"role": "user", "content": prompt}]
+)
+result = response["message"]["content"]
+ 
+print("\nRESULT:\n")
+print(result)
+Sample Output
+Input: Example customer feedback
+Output: The Ollama model generates the requested feedback analysis and suggested action based on the input.
+Result
+Thus, the customer feedback analyzer was developed and executed successfully using Python and Ollama. The program displayed the generated result.
+How to Execute
+Save the code using the filename question9.py. Open Command Prompt in that folder and run: python question9.py. Enter the requested details when prompted.
+
+QUESTION 10: Interview Preparation Assistant
+Aim
+To develop a Python application using Ollama that interview preparation assistant based on user input.
+Procedure / Algorithm
+    56. Import the Ollama Python library.
+    57. Accept the required input from the user (or read the required text file / FAQ dataset).
+    58. Prepare a prompt that tells the AI model what task to perform.
+    59. Send the prompt to the llama3.2 model using ollama.chat().
+    60. Read and display the response returned by the model.
+Program
+import ollama
+ 
+print("Interview Preparation Assistant")
+user_text = input("Enter technical subject: ")
+extra = input("Enter difficulty (Beginner/Intermediate/Advanced): ")
+ 
+prompt = f"Generate five {extra} interview questions on {user_text}, with clear answers."
+ 
+response = ollama.chat(
+    model="llama3.2",
+    messages=[{"role": "user", "content": prompt}]
+)
+result = response["message"]["content"]
+ 
+print("\nRESULT:\n")
+print(result)
+Sample Output
+Input: Example technical subject and difficulty
+Output: The Ollama model generates the requested five interview questions and answers based on the input.
+Result
+Thus, the interview preparation assistant was developed and executed successfully using Python and Ollama. The program displayed the generated result.
+How to Execute
+Save the code using the filename question10.py. Open Command Prompt in that folder and run: python question10.py. Enter the requested details when prompted.
+
+QUESTION 11: AI Story Generator
+Aim
+To develop a Python application using Ollama that ai story generator based on user input.
+Procedure / Algorithm
+    61. Import the Ollama Python library.
+    62. Accept the required input from the user (or read the required text file / FAQ dataset).
+    63. Prepare a prompt that tells the AI model what task to perform.
+    64. Send the prompt to the llama3.2 model using ollama.chat().
+    65. Read and display the response returned by the model.
+    66. Save the generated response in story.txt.
+Program
+import ollama
+ 
+print("AI Story Generator")
+user_text = input("Enter story topic: ")
+genre = input("Enter genre (Fantasy/Adventure/Mystery/Science Fiction): ")
+audience = input("Enter audience (Children/Teenagers/Adults): ")
+extra = genre + " genre for " + audience
+ 
+prompt = f"Write a short {extra} story about: {user_text}"
+ 
+response = ollama.chat(
+    model="llama3.2",
+    messages=[{"role": "user", "content": prompt}]
+)
+result = response["message"]["content"]
+ 
+print("\nRESULT:\n")
+print(result)
+ 
+with open("story.txt", "w", encoding="utf-8") as file:
+    file.write(result)
+print("\nSaved successfully in story.txt")
+Sample Output
+Input: Topic: A magic forest; Genre: Fantasy; Audience: Children
+Output: A short fantasy story generated by the model.
+Result
+Thus, the ai story generator was developed and executed successfully using Python and Ollama. The program displayed the generated result and saved it in story.txt.
+How to Execute
+Save the code using the filename question11.py. Open Command Prompt in that folder and run: python question11.py. Enter the requested details when prompted.
+
+QUESTION 12: Text Translation Assistant
+Aim
+To develop a Python application using Ollama that text translation assistant based on user input.
+Procedure / Algorithm
+    67. Import the Ollama Python library.
+    68. Accept the required input from the user (or read the required text file / FAQ dataset).
+    69. Prepare a prompt that tells the AI model what task to perform.
+    70. Send the prompt to the llama3.2 model using ollama.chat().
+    71. Read and display the response returned by the model.
+    72. Save the generated response in translated_text.txt.
+Program
+import ollama
+ 
+print("Text Translation Assistant")
+user_text = input("Enter paragraph: ")
+extra = input("Enter target language: ")
+ 
+prompt = f"Translate this text into {extra}, preserving its meaning:\n{user_text}"
+ 
+response = ollama.chat(
+    model="llama3.2",
+    messages=[{"role": "user", "content": prompt}]
+)
+result = response["message"]["content"]
+ 
+print("\nRESULT:\n")
+print(result)
+ 
+with open("translated_text.txt", "w", encoding="utf-8") as file:
+    file.write(result)
+print("\nSaved successfully in translated_text.txt")
+Sample Output
+Input: Example paragraph and target language
+Output: The Ollama model generates the requested translated paragraph based on the input.
+Result
+Thus, the text translation assistant was developed and executed successfully using Python and Ollama. The program displayed the generated result and saved it in translated_text.txt.
+How to Execute
+Save the code using the filename question12.py. Open Command Prompt in that folder and run: python question12.py. Enter the requested details when prompted.
+
+QUESTION 13: AI Text Summarizer
+Aim
+To develop a Python application using Ollama that ai text summarizer based on user input.
+Procedure / Algorithm
+    73. Import the Ollama Python library.
+    74. Accept the required input from the user (or read the required text file / FAQ dataset).
+    75. Prepare a prompt that tells the AI model what task to perform.
+    76. Send the prompt to the llama3.2 model using ollama.chat().
+    77. Read and display the response returned by the model.
+    78. Save the generated response in summary.txt.
+Program
+import ollama
+ 
+print("AI Text Summarizer")
+user_text = input("Enter long paragraph: ")
+ 
+prompt = "Summarize this text concisely and list its main ideas:\n" + user_text
+ 
+response = ollama.chat(
+    model="llama3.2",
+    messages=[{"role": "user", "content": prompt}]
+)
+result = response["message"]["content"]
+ 
+print("\nRESULT:\n")
+print(result)
+ 
+with open("summary.txt", "w", encoding="utf-8") as file:
+    file.write(result)
+print("\nSaved successfully in summary.txt")
+Sample Output
+Input: Example long paragraph
+Output: The Ollama model generates the requested summary and main ideas based on the input.
+Result
+Thus, the ai text summarizer was developed and executed successfully using Python and Ollama. The program displayed the generated result and saved it in summary.txt.
+How to Execute
+Save the code using the filename question13.py. Open Command Prompt in that folder and run: python question13.py. Enter the requested details when prompted.
+
+QUESTION 14: AI Question Paper Generator
+Aim
+To develop a Python application using Ollama that ai question paper generator based on user input.
+Procedure / Algorithm
+    79. Import the Ollama Python library.
+    80. Accept the required input from the user (or read the required text file / FAQ dataset).
+    81. Prepare a prompt that tells the AI model what task to perform.
+    82. Send the prompt to the llama3.2 model using ollama.chat().
+    83. Read and display the response returned by the model.
+Program
+import ollama
+ 
+print("AI Question Paper Generator")
+subject = input("Enter subject: ")
+topic = input("Enter topic: ")
+extra = input("Enter number of questions: ")
+user_text = subject + " - " + topic
+ 
+prompt = f"Create {extra} questions with answers for {user_text}."
+ 
+response = ollama.chat(
+    model="llama3.2",
+    messages=[{"role": "user", "content": prompt}]
+)
+result = response["message"]["content"]
+ 
+print("\nRESULT:\n")
+print(result)
+Sample Output
+Input: Example subject, topic and number of questions
+Output: The Ollama model generates the requested questions and answers based on the input.
+Result
+Thus, the ai question paper generator was developed and executed successfully using Python and Ollama. The program displayed the generated result.
+How to Execute
+Save the code using the filename question14.py. Open Command Prompt in that folder and run: python question14.py. Enter the requested details when prompted.
+
+QUESTION 15: AI Paragraph Rewriter
+Aim
+To develop a Python application using Ollama that ai paragraph rewriter based on user input.
+Procedure / Algorithm
+    84. Import the Ollama Python library.
+    85. Accept the required input from the user (or read the required text file / FAQ dataset).
+    86. Prepare a prompt that tells the AI model what task to perform.
+    87. Send the prompt to the llama3.2 model using ollama.chat().
+    88. Read and display the response returned by the model.
+    89. Save the generated response in rewritten_text.txt.
+Program
+import ollama
+ 
+print("AI Paragraph Rewriter")
+user_text = input("Enter paragraph: ")
+extra = input("Enter style (Formal/Simple/Professional): ")
+ 
+prompt = f"Rewrite this paragraph in a {extra} style without changing its meaning:\n{user_text}"
+ 
+response = ollama.chat(
+    model="llama3.2",
+    messages=[{"role": "user", "content": prompt}]
+)
+result = response["message"]["content"]
+ 
+print("\nRESULT:\n")
+print(result)
+ 
+with open("rewritten_text.txt", "w", encoding="utf-8") as file:
+    file.write(result)
+print("\nSaved successfully in rewritten_text.txt")
+Sample Output
+Input: Example paragraph and writing style
+Output: The Ollama model generates the requested rewritten paragraph based on the input.
+Result
+Thus, the ai paragraph rewriter was developed and executed successfully using Python and Ollama. The program displayed the generated result and saved it in rewritten_text.txt.
+How to Execute
+Save the code using the filename question15.py. Open Command Prompt in that folder and run: python question15.py. Enter the requested details when prompted.
+
+QUESTION 16: AI Keyword Extractor
+Aim
+To develop a Python application using Ollama that ai keyword extractor based on user input.
+Procedure / Algorithm
+    90. Import the Ollama Python library.
+    91. Accept the required input from the user (or read the required text file / FAQ dataset).
+    92. Prepare a prompt that tells the AI model what task to perform.
+    93. Send the prompt to the llama3.2 model using ollama.chat().
+    94. Read and display the response returned by the model.
+Program
+import ollama
+ 
+print("AI Keyword Extractor")
+user_text = input("Enter paragraph: ")
+ 
+prompt = "Extract important keywords, key phrases, and main concepts as a list:\n" + user_text
+ 
+response = ollama.chat(
+    model="llama3.2",
+    messages=[{"role": "user", "content": prompt}]
+)
+result = response["message"]["content"]
+ 
+print("\nRESULT:\n")
+print(result)
+Sample Output
+Input: Example paragraph
+Output: The Ollama model generates the requested keywords and key phrases based on the input.
+Result
+Thus, the ai keyword extractor was developed and executed successfully using Python and Ollama. The program displayed the generated result.
+How to Execute
+Save the code using the filename question16.py. Open Command Prompt in that folder and run: python question16.py. Enter the requested details when prompted.
+
+QUESTION 17: AI Assignment Topic Generator
+Aim
+To develop a Python application using Ollama that ai assignment topic generator based on user input.
+Procedure / Algorithm
+    95. Import the Ollama Python library.
+    96. Accept the required input from the user (or read the required text file / FAQ dataset).
+    97. Prepare a prompt that tells the AI model what task to perform.
+    98. Send the prompt to the llama3.2 model using ollama.chat().
+    99. Read and display the response returned by the model.
+Program
+import ollama
+ 
+print("AI Assignment Topic Generator")
+subject = input("Enter subject: ")
+area = input("Enter area of interest: ")
+user_text = subject + " - " + area
+ 
+prompt = f"Generate five assignment topics for {user_text}, with a brief description for each."
+ 
+response = ollama.chat(
+    model="llama3.2",
+    messages=[{"role": "user", "content": prompt}]
+)
+result = response["message"]["content"]
+ 
+print("\nRESULT:\n")
+print(result)
+Sample Output
+Input: Example subject and area of interest
+Output: The Ollama model generates the requested five topics and descriptions based on the input.
+Result
+Thus, the ai assignment topic generator was developed and executed successfully using Python and Ollama. The program displayed the generated result.
+How to Execute
+Save the code using the filename question17.py. Open Command Prompt in that folder and run: python question17.py. Enter the requested details when prompted.
+
+QUESTION 18: AI Product Description Generator
+Aim
+To develop a Python application using Ollama that ai product description generator based on user input.
+Procedure / Algorithm
+    100. Import the Ollama Python library.
+    101. Accept the required input from the user (or read the required text file / FAQ dataset).
+    102. Prepare a prompt that tells the AI model what task to perform.
+    103. Send the prompt to the llama3.2 model using ollama.chat().
+    104. Read and display the response returned by the model.
+    105. Save the generated response in product_description.txt.
+Program
+import ollama
+ 
+print("AI Product Description Generator")
+name = input("Enter product name: ")
+features = input("Enter product features: ")
+customers = input("Enter target customers: ")
+user_text = f"Product: {name}\nFeatures: {features}\nTarget customers: {customers}"
+ 
+prompt = "Write an attractive product description using these details:\n" + user_text
+ 
+response = ollama.chat(
+    model="llama3.2",
+    messages=[{"role": "user", "content": prompt}]
+)
+result = response["message"]["content"]
+ 
+print("\nRESULT:\n")
+print(result)
+ 
+with open("product_description.txt", "w", encoding="utf-8") as file:
+    file.write(result)
+print("\nSaved successfully in product_description.txt")
+Sample Output
+Input: Example product, features and target customers
+Output: The Ollama model generates the requested product description based on the input.
+Result
+Thus, the ai product description generator was developed and executed successfully using Python and Ollama. The program displayed the generated result and saved it in product_description.txt.
+How to Execute
+Save the code using the filename question18.py. Open Command Prompt in that folder and run: python question18.py. Enter the requested details when prompted.
+
+QUESTION 19: AI Daily Task Planner
+Aim
+To develop a Python application using Ollama that ai daily task planner based on user input.
+Procedure / Algorithm
+    106. Import the Ollama Python library.
+    107. Accept the required input from the user (or read the required text file / FAQ dataset).
+    108. Prepare a prompt that tells the AI model what task to perform.
+    109. Send the prompt to the llama3.2 model using ollama.chat().
+    110. Read and display the response returned by the model.
+Program
+import ollama
+ 
+print("AI Daily Task Planner")
+user_text = input("Enter tasks separated by commas: ")
+extra = input("Enter available time (example: 9 AM to 5 PM): ")
+ 
+prompt = f"Arrange these tasks into a realistic daily schedule for {extra}. Show time slots:\n{user_text}"
+ 
+response = ollama.chat(
+    model="llama3.2",
+    messages=[{"role": "user", "content": prompt}]
+)
+result = response["message"]["content"]
+ 
+print("\nRESULT:\n")
+print(result)
+Sample Output
+Input: Example tasks and available time
+Output: The Ollama model generates the requested daily schedule based on the input.
+Result
+Thus, the ai daily task planner was developed and executed successfully using Python and Ollama. The program displayed the generated result.
+How to Execute
+Save the code using the filename question19.py. Open Command Prompt in that folder and run: python question19.py. Enter the requested details when prompted.
+
+QUESTION 20: AI Interview Preparation Assistant
+Aim
+To develop a Python application using Ollama that ai interview preparation assistant based on user input.
+Procedure / Algorithm
+    111. Import the Ollama Python library.
+    112. Accept the required input from the user (or read the required text file / FAQ dataset).
+    113. Prepare a prompt that tells the AI model what task to perform.
+    114. Send the prompt to the llama3.2 model using ollama.chat().
+    115. Read and display the response returned by the model.
+Program
+import ollama
+ 
+print("AI Interview Preparation Assistant")
+user_text = input("Enter technical subject: ")
+extra = input("Enter difficulty (Beginner/Intermediate/Advanced): ")
+ 
+prompt = f"Generate five {extra} interview questions on {user_text}, with clear answers."
+ 
+response = ollama.chat(
+    model="llama3.2",
+    messages=[{"role": "user", "content": prompt}]
+)
+result = response["message"]["content"]
+ 
+print("\nRESULT:\n")
+print(result)
+Sample Output
+Input: Example technical subject and difficulty
+Output: The Ollama model generates the requested five interview questions and answers based on the input.
+Result
+Thus, the ai interview preparation assistant was developed and executed successfully using Python and Ollama. The program displayed the generated result.
+How to Execute
+Save the code using the filename question20.py. Open Command Prompt in that folder and run: python question20.py. Enter the requested details when prompted.
+
+QUESTION 21: AI Grammar Correction Assistant
+Aim
+To develop a Python application using Ollama that ai grammar correction assistant based on user input.
+Procedure / Algorithm
+    116. Import the Ollama Python library.
+    117. Accept the required input from the user (or read the required text file / FAQ dataset).
+    118. Prepare a prompt that tells the AI model what task to perform.
+    119. Send the prompt to the llama3.2 model using ollama.chat().
+    120. Read and display the response returned by the model.
+    121. Save the generated response in corrected_text.txt.
+Program
+import ollama
+ 
+print("AI Grammar Correction Assistant")
+user_text = input("Enter sentence or paragraph: ")
+ 
+prompt = "Correct grammar and spelling while preserving meaning:\n" + user_text
+ 
+response = ollama.chat(
+    model="llama3.2",
+    messages=[{"role": "user", "content": prompt}]
+)
+result = response["message"]["content"]
+ 
+print("\nRESULT:\n")
+print(result)
+ 
+with open("corrected_text.txt", "w", encoding="utf-8") as file:
+    file.write(result)
+print("\nSaved successfully in corrected_text.txt")
+Sample Output
+Input: She go to school yesterday.
+Output: She went to school yesterday.
+Result
+Thus, the ai grammar correction assistant was developed and executed successfully using Python and Ollama. The program displayed the generated result and saved it in corrected_text.txt.
+How to Execute
+Save the code using the filename question21.py. Open Command Prompt in that folder and run: python question21.py. Enter the requested details when prompted.
+
+QUESTION 22: Sentiment Analysis Assistant
+Aim
+To develop a Python application using Ollama that sentiment analysis assistant based on user input.
+Procedure / Algorithm
+    122. Import the Ollama Python library.
+    123. Accept the required input from the user (or read the required text file / FAQ dataset).
+    124. Prepare a prompt that tells the AI model what task to perform.
+    125. Send the prompt to the llama3.2 model using ollama.chat().
+    126. Read and display the response returned by the model.
+Program
+import ollama
+ 
+print("Sentiment Analysis Assistant")
+user_text = input("Enter review or feedback: ")
+ 
+prompt = "Analyze the text. Classify it as Positive, Negative, or Neutral and explain briefly.\n" + user_text
+ 
+response = ollama.chat(
+    model="llama3.2",
+    messages=[{"role": "user", "content": prompt}]
+)
+result = response["message"]["content"]
+ 
+print("\nRESULT:\n")
+print(result)
+Sample Output
+Input: The product is excellent and works perfectly.
+Output: Positive – The customer expresses satisfaction.
+Result
+Thus, the sentiment analysis assistant was developed and executed successfully using Python and Ollama. The program displayed the generated result.
+How to Execute
+Save the code using the filename question22.py. Open Command Prompt in that folder and run: python question22.py. Enter the requested details when prompted.
+
+QUESTION 23: AI-Based MCQ Generator
+Aim
+To develop a Python application using Ollama that ai-based mcq generator based on user input.
+Procedure / Algorithm
+    127. Import the Ollama Python library.
+    128. Accept the required input from the user (or read the required text file / FAQ dataset).
+    129. Prepare a prompt that tells the AI model what task to perform.
+    130. Send the prompt to the llama3.2 model using ollama.chat().
+    131. Read and display the response returned by the model.
+Program
+import ollama
+ 
+print("AI-Based MCQ Generator")
+user_text = input("Enter subject/topic: ")
+ 
+prompt = f"Generate exactly five multiple-choice questions about {user_text}. Give four options A-D and mark the correct answer."
+ 
+response = ollama.chat(
+    model="llama3.2",
+    messages=[{"role": "user", "content": prompt}]
+)
+result = response["message"]["content"]
+ 
+print("\nRESULT:\n")
+print(result)
+Sample Output
+Input: Python basics
+Output: 1. Which keyword defines a function? A) func B) def C) function D) define
+Correct answer: B) def
+(The model generates five questions.)
+Result
+Thus, the ai-based mcq generator was developed and executed successfully using Python and Ollama. The program displayed the generated result.
+How to Execute
+Save the code using the filename question23.py. Open Command Prompt in that folder and run: python question23.py. Enter the requested details when prompted.
+
+QUESTION 24: AI Study Assistant
+Aim
+To develop a Python application using Ollama that ai study assistant based on user input.
+Procedure / Algorithm
+    132. Import the Ollama Python library.
+    133. Accept the required input from the user (or read the required text file / FAQ dataset).
+    134. Prepare a prompt that tells the AI model what task to perform.
+    135. Send the prompt to the llama3.2 model using ollama.chat().
+    136. Read and display the response returned by the model.
+Program
+import ollama
+ 
+print("AI Study Assistant")
+user_text = input("Enter academic topic: ")
+ 
+prompt = "Explain simply, give one example, and list three key points:\n" + user_text
+ 
+response = ollama.chat(
+    model="llama3.2",
+    messages=[{"role": "user", "content": prompt}]
+)
+result = response["message"]["content"]
+ 
+print("\nRESULT:\n")
+print(result)
+Sample Output
+Input: Example academic topic
+Output: The Ollama model generates the requested explanation, example and three key points based on the input.
+Result
+Thus, the ai study assistant was developed and executed successfully using Python and Ollama. The program displayed the generated result.
+How to Execute
+Save the code using the filename question24.py. Open Command Prompt in that folder and run: python question24.py. Enter the requested details when prompted.
+
+QUESTION 25: AI Flashcard Generator
+Aim
+To develop a Python application using Ollama that ai flashcard generator based on user input.
+Procedure / Algorithm
+    137. Import the Ollama Python library.
+    138. Accept the required input from the user (or read the required text file / FAQ dataset).
+    139. Prepare a prompt that tells the AI model what task to perform.
+    140. Send the prompt to the llama3.2 model using ollama.chat().
+    141. Read and display the response returned by the model.
+    142. Save the generated response in flashcards.txt.
+Program
+import ollama
+ 
+print("AI Flashcard Generator")
+user_text = input("Enter topic: ")
+ 
+prompt = f"Generate exactly five study flashcards about {user_text}. Format each as Question and Answer."
+ 
+response = ollama.chat(
+    model="llama3.2",
+    messages=[{"role": "user", "content": prompt}]
+)
+result = response["message"]["content"]
+ 
+print("\nRESULT:\n")
+print(result)
+ 
+with open("flashcards.txt", "w", encoding="utf-8") as file:
+    file.write(result)
+print("\nSaved successfully in flashcards.txt")
+Sample Output
+Input: Example subject and topic
+Output: The Ollama model generates the requested five flashcards based on the input.
+Result
+Thus, the ai flashcard generator was developed and executed successfully using Python and Ollama. The program displayed the generated result and saved it in flashcards.txt.
+How to Execute
+Save the code using the filename question25.py. Open Command Prompt in that folder and run: python question25.py. Enter the requested details when prompted.
+
+QUESTION 26: Meeting Minutes Generator
+Aim
+To develop a Python application using Ollama that meeting minutes generator based on user input.
+Procedure / Algorithm
+    143. Import the Ollama Python library.
+    144. Accept the required input from the user (or read the required text file / FAQ dataset).
+    145. Prepare a prompt that tells the AI model what task to perform.
+    146. Send the prompt to the llama3.2 model using ollama.chat().
+    147. Read and display the response returned by the model.
+    148. Save the generated response in meeting_minutes.txt.
+Program
+import ollama
+ 
+print("Meeting Minutes Generator")
+user_text = input("Enter meeting notes: ")
+ 
+prompt = "Prepare meeting minutes with Summary, Decisions, and Action Items from these notes:\n" + user_text
+ 
+response = ollama.chat(
+    model="llama3.2",
+    messages=[{"role": "user", "content": prompt}]
+)
+result = response["message"]["content"]
+ 
+print("\nRESULT:\n")
+print(result)
+ 
+with open("meeting_minutes.txt", "w", encoding="utf-8") as file:
+    file.write(result)
+print("\nSaved successfully in meeting_minutes.txt")
+Sample Output
+Input: Example meeting notes
+Output: The Ollama model generates the requested meeting minutes based on the input.
+Result
+Thus, the meeting minutes generator was developed and executed successfully using Python and Ollama. The program displayed the generated result and saved it in meeting_minutes.txt.
+How to Execute
+Save the code using the filename question26.py. Open Command Prompt in that folder and run: python question26.py. Enter the requested details when prompted.
+
+QUESTION 27: AI Resume Analyzer
+Aim
+To develop a Python application using Ollama that ai resume analyzer based on user input.
+Procedure / Algorithm
+    149. Import the Ollama Python library.
+    150. Accept the required input from the user (or read the required text file / FAQ dataset).
+    151. Prepare a prompt that tells the AI model what task to perform.
+    152. Send the prompt to the llama3.2 model using ollama.chat().
+    153. Read and display the response returned by the model.
+Program
+import ollama
+ 
+print("AI Resume Analyzer")
+with open("resume.txt", "r", encoding="utf-8") as file:
+    user_text = file.read()
+ 
+prompt = """Analyze this resume. Identify skills, qualifications, a brief profile summary, and suggestions for improvement:\n""" + user_text
+ 
+response = ollama.chat(
+    model="llama3.2",
+    messages=[{"role": "user", "content": prompt}]
+)
+result = response["message"]["content"]
+ 
+print("\nRESULT:\n")
+print(result)
+Sample Output
+Input file: resume.txt
+Output: Skills: Python, Java ... Summary: Candidate with programming knowledge ... Improvements: Add project metrics and links.
+Result
+Thus, the ai resume analyzer was developed and executed successfully using Python and Ollama. The program displayed the generated result.
+How to Execute
+Before running, create a text file named resume.txt in the same folder and paste the resume content into it. Then run the program.
+
+QUESTION 28: College FAQ Chatbot
+Aim
+To develop a Python application using Ollama that college faq chatbot based on user input.
+Procedure / Algorithm
+    154. Import the Ollama Python library.
+    155. Accept the required input from the user (or read the required text file / FAQ dataset).
+    156. Prepare a prompt that tells the AI model what task to perform.
+    157. Send the prompt to the llama3.2 model using ollama.chat().
+    158. Read and display the response returned by the model.
+Program
+import ollama
+ 
+print("College FAQ Chatbot")
+faqs = """Admission: Applications are submitted through the college admission office.
+Courses: The college offers undergraduate and postgraduate programmes.
+Library timings: The library is open from 9 AM to 5 PM.
+Examinations: Exam timetables are announced by the examination department."""
+user_text = input("Enter your college-related question: ")
+ 
+prompt = """Use ONLY the FAQ dataset below. If the answer is missing, say it is not found in the dataset.
+FAQ DATA:
+""" + faqs + "\nQuestion: " + user_text
+ 
+response = ollama.chat(
+    model="llama3.2",
+    messages=[{"role": "user", "content": prompt}]
+)
+result = response["message"]["content"]
+ 
+print("\nRESULT:\n")
+print(result)
+Sample Output
+Input: What are the library timings?
+Output: The library is open from 9 AM to 5 PM.
+Result
+Thus, the college faq chatbot was developed and executed successfully using Python and Ollama. The program displayed the generated result.
+How to Execute
+Save the code using the filename question28.py. Open Command Prompt in that folder and run: python question28.py. Enter the requested details when prompted.
+The FAQ answers are predefined in the faqs variable. Edit those entries to match your own college information.
+
+QUESTION 29: Customer Feedback Analyzer
+Aim
+To develop a Python application using Ollama that customer feedback analyzer based on user input.
+Procedure / Algorithm
+    159. Import the Ollama Python library.
+    160. Accept the required input from the user (or read the required text file / FAQ dataset).
+    161. Prepare a prompt that tells the AI model what task to perform.
+    162. Send the prompt to the llama3.2 model using ollama.chat().
+    163. Read and display the response returned by the model.
+Program
+import ollama
+ 
+print("Customer Feedback Analyzer")
+user_text = input("Enter customer feedback: ")
+ 
+prompt = "Analyze the text. Classify it as Positive, Negative, or Neutral and explain briefly.\n" + user_text
+ 
+response = ollama.chat(
+    model="llama3.2",
+    messages=[{"role": "user", "content": prompt}]
+)
+result = response["message"]["content"]
+ 
+print("\nRESULT:\n")
+print(result)
+Sample Output
+Input: Example customer feedback
+Output: The Ollama model generates the requested feedback analysis based on the input.
+Result
+Thus, the customer feedback analyzer was developed and executed successfully using Python and Ollama. The program displayed the generated result.
+How to Execute
+Save the code using the filename question29.py. Open Command Prompt in that folder and run: python question29.py. Enter the requested details when prompted.
+
+QUESTION 30: AI Email Assistant
+Aim
+To develop a Python application using Ollama that ai email assistant based on user input.
+Procedure / Algorithm
+    164. Import the Ollama Python library.
+    165. Accept the required input from the user (or read the required text file / FAQ dataset).
+    166. Prepare a prompt that tells the AI model what task to perform.
+    167. Send the prompt to the llama3.2 model using ollama.chat().
+    168. Read and display the response returned by the model.
+    169. Save the generated response in email_reply.txt.
+Program
+import ollama
+ 
+print("AI Email Assistant")
+user_text = input("Paste the original email: ")
+extra = input("Enter tone (Formal/Friendly/Professional): ")
+ 
+prompt = f"Write an email reply in a {extra} tone. Include Subject, greeting, message and closing. Original email:\n{user_text}"
+ 
+response = ollama.chat(
+    model="llama3.2",
+    messages=[{"role": "user", "content": prompt}]
+)
+result = response["message"]["content"]
+ 
+print("\nRESULT:\n")
+print(result)
+ 
+with open("email_reply.txt", "w", encoding="utf-8") as file:
+    file.write(result)
+print("\nSaved successfully in email_reply.txt")
+Sample Output
+Input: Original email requesting a meeting; Tone: Formal
+Output: Subject: Re: Meeting Request
+Dear ..., Thank you for your email ... Regards, ...
+Result
+Thus, the ai email assistant was developed and executed successfully using Python and Ollama. The program displayed the generated result and saved it in email_reply.txt.
+How to Execute
+Save the code using the filename question30.py. Open Command Prompt in that folder and run: python question30.py. Enter the requested details when prompted.
+
+IMPORTANT EXAM NOTES
+    • Questions 1 and 21 are very similar; Question 21 explicitly mentions spelling correction too.
+    • Questions 2 and 22 are sentiment classification tasks; Questions 9 and 29 add complaint/appreciation and a suggested action.
+    • Questions 3 and 23 both generate five MCQs; Question 23 asks for subject and topic.
+    • Questions 10 and 20 are repeated interview-preparation tasks.
+    • Questions 5 and 25 are repeated flashcard tasks; Question 25 asks for subject and topic.
+    • Questions 6 and 26 both generate meeting minutes.
+    • Questions 7 and 27 both read resume.txt.
+    • Questions 8 and 28 both use a predefined FAQ dataset and must report when information is unavailable.
+    • If you see “connection refused”, check that Ollama is installed and running. If the model is missing, run: ollama pull llama3.2.
+    • If Python says “No module named ollama”, run: pip install ollama.
